@@ -67,7 +67,7 @@ if submit_button:
     }
 
     # URL pointing to your active FastAPI /predict endpoint
-    FASTAPI_URL = "http://127.0.0.1:8000/predict"
+    FASTAPI_URL = "http://backend:8000/predict"
     try:
         with st.spinner("Analyzing data via SVM Model..."):
             # Send the POST request to the backend API
