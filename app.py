@@ -31,8 +31,7 @@ app = FastAPI(
 
 # Load the model artifacts globally on startup
 # Update this path to match exactly where your .pkl file is saved
-ARTIFACTS_PATH = r"C:\Users\ayush\All of my AI development models\heart_attack_possibility_predictor\Heart_attack_possibility_predictor\heart_attack_model_artifacts.pkl"
-
+ARTIFACTS_PATH = "heart_attack_model_artifacts.pkl"
 if not os.path.exists(ARTIFACTS_PATH):
     raise FileNotFoundError(f"could not find model artifacts at: {ARTIFACTS_PATH}. Please run your training script first")
 
