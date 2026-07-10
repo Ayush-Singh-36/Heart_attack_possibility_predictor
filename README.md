@@ -8,7 +8,7 @@ A complete production-ready machine learning system that utilizes a calibrated *
 
 Here is the operational user interface of the deployment system where users can input patient clinical metrics to receive real-time calibrated predictions:
 
-![Streamlit Frontend Workspace](Heart_attack_possibility_predictor/assets/app_preview.png)
+![Streamlit Frontend Workspace](assets/app_preview.png)
 
 ---
 
