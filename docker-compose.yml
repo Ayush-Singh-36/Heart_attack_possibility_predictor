@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  # The FastAPI server service
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./Heart_attack_possibility_predictor:/app
+
+  # The Streamlit UI service
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./Heart_attack_possibility_predictor:/app
+    depends_on:
+      - backend # Ensures the backend spins up before the frontend tries to connect

@@ -1,0 +1,21 @@
+# Use an official, lightweight Python base image
+FROM python:3.11-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the dependency list first (helps with Docker caching)
+COPY requirements.txt .
+
+# Install the Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the inner source code directory and your artifacts into the container
+# Docker will map this to /app inside the container
+COPY ./Heart_attack_possibility_predictor /app
+
+# Expose the internal port that FastAPI runs on
+EXPOSE 8000
+
+# Command to run the Uvicorn production server inside the container
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
